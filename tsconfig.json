@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "rootDir": "./apps",
+    // "rootDir": "./apps",
     "paths": {
       // "@ui/*": ["packages/common/src/ui/*"],
       // "@kn/*": ["packages/common/src/*"],
       // "react": ["./node_modules/preact/compat/"],
       // "react-dom": ["./node_modules/preact/compat/"]
-      "@oai/*": ["apps/oai/*"],
-      "@ui/*": ["apps/ui/*"]
+      // "@oai/*": ["apps/oai/*"],
+      // "@ui/*": ["apps/ui/*"]
     },
     "composite": true,
     //
