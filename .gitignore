@@ -1,0 +1,42 @@
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+__pycache__
+staticfiles
+env/
+env8/
+# static_builds
+.vscode
+node_modules/
+
+credentials.json
+token.json
+token.gpdx.json
+
+.env
+.env.*
+!.env.example*
+env_kna
+env_kna_*
+
+db.sqlite3
+NOTE
+wip-nogit/
+venv312
