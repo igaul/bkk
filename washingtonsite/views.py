@@ -10,14 +10,6 @@ from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.views.decorators.http import require_http_methods
 
-# remap:
-# bkkwa.html -> index
-# bkklocationswa.html -> calendar
-# bkstorywa.html -> story
-# bkkmediawa.html -> media
-# bkklinkswa.html -> links
-# bkksongswa.html -> songs
-# bkkcontactwa.html -> contact
 
 def index(request: HttpRequest) -> TemplateResponse:
     """Render the index page."""
