@@ -21,6 +21,8 @@ urlpatterns_new = [
     path("songs", songs, name="songs"),
     path("contact", contact, name="contact"),
 ]
+
+# these should probaly just be redirects
 urlpatterns_old = [
     path("bkkwa.html", index, name="index-old"),
     path("bkklocationswa.html", calendar, name="calendar-old"),
