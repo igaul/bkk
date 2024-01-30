@@ -1,5 +1,5 @@
 {% extends "washingtonsite_base.dj.html" %}
-{% block extra_head %}
+{% comment %} {% block extra_head %}
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript">
     $(function() {
@@ -31,7 +31,7 @@
         });
     }
 </script>
-{% endblock extra_head %}
+{% endblock extra_head %} {% endcomment %}
 {% block content %}
 <div id="form">
     <h1>find your faves!</h1>
@@ -60,4 +60,40 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
     </h1>
 </div>
 {% endblock content %}
+{% block bottom_scripts %}
+<script>
+    const spinnerEl = document.getElementById('spinner');
+    spinnerEl.style.display = 'none';
+    const searchFormEl = document.getElementById('searchform');
+    const resultsEl = document.getElementById('results');
+
+    function search(query, filter){
+        spinnerEl.style.display = 'block';
+        const url = 'https://bkk.schepman.org/jsonp?search=' + query + '&searchby=' + filter + '&jsoncallback=?';
+        fetch(url, {method: 'GET'})
+            .then(response => response.json())
+            .then(data => {
+                let table = '<table><tr><th>Artist</th><th>Title</th></tr>';
+                data.forEach(function(item){
+                    table += '<tr><td>' + item.artist + '</td><td>' + item.title + '</td></tr>';
+                });
+                spinnerEl.style.display = 'none';
+                resultsEl.innerHTML = table;
+            })
+            .catch(error => {console.log(error);spinnerEl.style.display = 'none';});
+    }
+
+    searchFormEl.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const searchEl = document.getElementById('search');
+        const searchbyEl = document.getElementById('searchby');
+        const search = searchEl.value;
+        const searchby = searchbyEl.value;
+        if (search !== '') {
+            ajaxSearch(search, searchby);
+        }
+    });
+</script>
+{% endblock bottom_scripts %}
+
 
