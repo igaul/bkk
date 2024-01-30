@@ -7,7 +7,10 @@
   "scripts": {
     "admin:dev": "pnpm --filter admin dev",
     "guest:dev": "pnpm --filter guest dev",
-    "website:dev": "pnpm --filter website dev"
+    "website:dev": "pnpm --filter website dev",
+    "tw:w": "tailwindcss -i ./tw-input.css -o ./static/tw.css --watch",
+    "tw:b": "tailwindcss -i ./tw-input.css -o ./static/tw.css --minify",
+    "gen-api": "node ./node_modules/orval/dist/index.js --config ./orval.config.js"
   },
   "prettier": {
     "arrowParens": "avoid"
