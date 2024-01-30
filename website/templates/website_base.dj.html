@@ -1,0 +1,34 @@
+{% load static %} <!DOCTYPE html><html lang="en">
+  {% comment %} {% spaceless %} {% endcomment %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'tw.css' %}" />
+    <link rel="stylesheet" href="{% static 'vendors/styles.css' %}" />
+    <link rel="icon" href="{% static "NCFF_Logo_CITY-32x32.png" %}" sizes="32x32" />
+    <link rel="icon" href="{% static "NCFF_Logo_CITY-192x192.png" %}" sizes="192x192" />
+    {% comment %}
+    <link
+      rel="preload"
+      href="https://cdn.karanook.com/assets/montserrat_latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    {% endcomment %} {% block extra_head %}{% endblock extra_head %} {% block extra_styles %} {% endblock extra_styles %}
+    <title> {% block page_title %}{% endblock page_title %}{% if page_title %} {{page_title}} - {% endif %} NC Folk Festival</title>
+</head>
+<body>
+    {% comment %} {% include 'common/messages_list.html' %} {% endcomment %}
+    <div class="p-3 bg-[#002745] flex justify-center items-center gap-3">
+      <img class="h-10 w-auto" src="{% static "NCFF_Logo_Horizontal-Outlined-in-White.png" %}" alt="ncff logo">
+      <div class="row items-end h-10">
+              <a href="https://ncfolkfestival.com/" class="text-center underline-offset-2 text-white text-lg visited:text-gray-200">Back to NC Folk Festival</a>
+      </div>
+  
+  </div>
+    <div class="block-content">{% block content %}{% endblock content %}</div>
+</body>
+{% block bottom_scripts %}{% endblock bottom_scripts %}
+</html>
+{% comment %} {% endspaceless %} {% endcomment %}

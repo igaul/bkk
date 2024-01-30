@@ -1,0 +1,1 @@
+ENV_FILE=.env.dev ./manage.py runserver 0.0.0.0:4455

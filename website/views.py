@@ -13,4 +13,4 @@ from django.views.decorators.http import require_http_methods
 
 def index(request: HttpRequest) -> TemplateResponse:
     """Render the index page."""
-    return TemplateResponse(request, "index.html")
+    return TemplateResponse(request, "website/index.html")
