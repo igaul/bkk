@@ -14,24 +14,23 @@ from .views import calendar, contact, index, links, media, songs, story
 # ??? serve views twice or inline redirect ???
 urlpatterns_new = [
     path("", index, name="index"),
- 
     path("calendar", calendar, name="calendar"),
-  
     path("story", story, name="story"),
- 
     path("media", media, name="media"),
-
     path("links", links, name="links"),
-
     path("songs", songs, name="songs"),
-
     path("contact", contact, name="contact"),
-  
 ]
-urlpatterns_old = [     path("bkkwa.html", index, name="index-old"),    path("bkklocationswa.html", calendar, name="calendar-old"),  path("bkstorywa.html", story, name="story-old"),   path("bkkmediawa.html", media, name="media-old"),   path("bkklinkswa.html", links, name="links-old"),   path("bkksongswa.html", songs, name="songs-old"),
-  path("bkkcontactwa.html", contact, name="contact-old"),
+urlpatterns_old = [
+    path("bkkwa.html", index, name="index-old"),
+    path("bkklocationswa.html", calendar, name="calendar-old"),
+    path("bkstorywa.html", story, name="story-old"),
+    path("bkkmediawa.html", media, name="media-old"),
+    path("bkklinkswa.html", links, name="links-old"),
+    path("bkksongswa.html", songs, name="songs-old"),
+    path("bkkcontactwa.html", contact, name="contact-old"),
 ]
 
 urlpatterns = urlpatterns_old + [
-    path("wa/",include(urlpatterns_new)),
+    path("wa/", include(urlpatterns_new)),
 ]
