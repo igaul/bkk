@@ -33,31 +33,33 @@
 </script>
 {% endblock extra_head %} {% endcomment %}
 {% block content %}
-<div id="form">
-    <h1>find your faves!</h1>
-    <form id="searchform">
-        <p>
-            Search by:
-            <select id="searchby">
+<div class="col gap-4 p-4">
+    <h1 class="text-4xl font-semibold">find your faves!</h1>
+    <form id="searchform" class="row gap-2">
+ <h1 class="text-xl">
+    Search by:
+ </h1>
+            
+            <select class="rounded" id="searchby">
                 <option>artist</option>
                 <option>title</option>
             </select>
-            <input id="search" name="search" type="textbox" />
-            <input id="btnSearch" type="submit" value="Go!" />
+            <input class="rounded px-2" id="search" name="search" type="textbox" />
+            <input class="rounded px-2 bg-slate-200 text-black shadow" id="btnSearch" type="submit" value="Go!" />
             <img id="spinner" src="ajaxload.gif" />
-        </p>
+
     </form>
-</div>
+
 
 <div id="results"></div>
 <div id="form2"></div>
 <div id="results2"></div>
-<br />
-____________________________________<br />
-<br />
+
+
+
+<h2 class="text-xl font-semibold">
 if u don't find what you are looking 4 please email songs@babyketten.com with requests!
-</body><br />
-    </h1>
+</h2>
 </div>
 {% endblock content %}
 {% block bottom_scripts %}
