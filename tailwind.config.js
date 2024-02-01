@@ -4,8 +4,8 @@ module.exports = {
   content: [
     "./templates/**/*.html",
     // "./artvendors/templates/**/*.html",
-    // "./foodvendors/templates/**/*.html",
-    // "./vendors/templates/**/*.html",
+    "./washingtonsite/templates/**/*.html",
+    "./website/templates/**/*.html",
     "./**/templates/**/*.html",
     // "../static_builds/assets/kjo/*.js",
   ],
