@@ -76,6 +76,7 @@ INSTALLED_APPS = [
     #
     "users",
     "website",
+    "washingtonsite",
 ]
 
 MIDDLEWARE = [
