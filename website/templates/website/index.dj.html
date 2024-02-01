@@ -1,1 +1,35 @@
-HELLO
+{% extends "website_base.dj.html" %} {% load static %}
+{% block content %}
+<div class="col gap-0">
+    <div class="col bg-gray-300 w-full items-center p-4">
+        <h1 class="text-7xl font-bold uppercase">
+            Baby Ketten Karaoke
+        </h1>
+    </div>
+    <div class="col bg-red-600 py-14 gap-8">
+        <div class="col items-center gap-3 text-white *:text-3xl *:font-bold">
+            <h1>
+                OPEN 7 DAYZ A WEEEK 5PM-2:30AM
+            </h1>
+            <h1>
+                DAILEE PRIVATE KARAOKEE ROOMZ 5PM-2AM
+            </h1>
+            <h1>
+                DAILEEPUBLIK KARAOKEE 9PM-2AM
+            </h1>
+            <h1>
+                FULL BARR WITH 12 TAPZ + KOCKTALE MENEW
+            </h1>
+            <h1>
+                FULL VEGANN MENEW
+            </h1>
+            <h1>
+                ALL AGEZ ALLOWED TIL 9PM!
+            </h1>
+        </div>
+        <div class="col items-center max-w-xl mx-auto">
+            <img src="{% static 'website/bkk-sign.jpg' %}" alt="Baby Ketten Karaoke" class="w-full rounded-3xl">
+        </div>
+    </div>
+</div>
+{% endblock content %}
