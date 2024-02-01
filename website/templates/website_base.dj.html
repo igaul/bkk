@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'tw.css' %}" />
     <link rel="icon" href="{% static "favicon.ico" %}" sizes="32x32" />
+    {#  TODO: meta tags / seo  #}
     {% comment %}
     <link
       rel="preload"
@@ -18,7 +19,7 @@
     {# TODO: remove all this ... #}
     <style type="text/css"> 
         <!-- 
-        body  {
+        {% comment %} body  {
             font: 100% Verdana, Arial, Helvetica, sans-serif;
             background: #000000	;
             margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
@@ -27,23 +28,23 @@
             color: #666;
             background-color: #000;
             background-image: url();
-        }
-        .twoColLiqLtHdr #container {
+        } {% endcomment %}
+        {% comment %} .twoColLiqLtHdr #container {
             width: 781px;  /* this will create a container 80% of the browser width */
             background: #000000;
             margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
             border: 0px solid #000000;
             text-align: left; /* this overrides the text-align: center on the body element. */
             color: #666;
-        } 
-        .twoColLiqLtHdr #header { 
+        }  {% endcomment %}
+        {% comment %} .twoColLiqLtHdr #header { 
             background: #000000; 
             padding: 0 0px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
-        } 
-        .twoColLiqLtHdr #header h1 {
+        }  {% endcomment %}
+        {% comment %} .twoColLiqLtHdr #header h1 {
             margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
             padding: 0px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
-        }
+        } {% endcomment %}
         
         /* Tips for sidebar1:
         1. since we are working in percentages, it's best not to use padding on the sidebar. It will be added to the width for standards compliant browsers creating an unknown actual width. 
@@ -128,25 +129,9 @@
         }
         --> 
         </style>
-        <link href="untitled.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
         <!--
-        a:link {
-            color: #FFF;
-            text-decoration: none;
-        }
-        a:visited {
-            text-decoration: none;
-            color: #999;
-        }
-        a:hover {
-            text-decoration: none;
-            color: #F00;
-        }
-        a:active {
-            text-decoration: none;
-            color: #F00;
-        }
+   
         .twoColLiqLtHdr p {
             font-weight: bold;
         }

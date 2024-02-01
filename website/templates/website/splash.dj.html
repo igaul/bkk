@@ -4,18 +4,24 @@
 {% endblock extra_head %}
 {% block content %}
 
-<div class="col gap-8 justify-center">
-  	<img src="{% static "website/bkklogobwtouchup.jpg" %}" width="800" height="271" />
-   	<a href=" {% url "website:index" %} " target="_top">ENTER BKK OREGON</a>
-	<a href="{% url "washingtonsite:index" %}">ENTER BKK WASHINGTON</a>
+<div class="col gap-8 py-4 justify-center items-center">
+	<div class="max-w-3xl p-4">
+		  	<img src="{% static "website/bkklogobwtouchup.jpg" %}" width="100%" height="271" />
+	</div>
+
+	<div class="col text-4xl items-center gap-6">
+		   	<a href=" {% url "website:index" %} " target="_top">ENTER BKK OREGON</a>
+			<a href="{% url "washingtonsite:index" %}">ENTER BKK WASHINGTON</a>
+	</div>
+
 
   
 
-<p style="font-size: 18px">
+<p class="text-lg">
   R USING A MOBILULAR D-VICE  4 SONG SERCH?
 </p>
 
-<p style="font-size: 18px">
+<div class="row gap-3">
 	<a href="http://itunes.apple.com/us/app/baby-ketten/id368869099?mt=8" target="_blank">
 		<img src="{% static "website/apple.png" %}" width="100" height="100" alt="iphone app!" longdesc="http://itunes.apple.com/us/app/baby-ketten/id368869099?mt=8" />
 	</a>
@@ -25,7 +31,7 @@
 	<a href="http://book.babyketten.com" target="_blank">
 		<img src="{% static "website/windows.png" %}" width="100" height="100" alt="windows phone web app!" />
 	</a>
-</p>
+</div>
 
 </div>
 {% endblock content %}

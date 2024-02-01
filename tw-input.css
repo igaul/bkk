@@ -13,6 +13,22 @@
     @apply flex flex-row gap-1;
   }
 }
+a:link {
+  color: #FFF;
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+  color: #999;
+}
+a:hover {
+  text-decoration: none;
+  color: #F00;
+}
+a:active {
+  text-decoration: none;
+  color: #F00;
+}
 a {
-    @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+    @apply text-white visited:text-gray-400 hover:text-red-600 active:text-red-600;
  }
