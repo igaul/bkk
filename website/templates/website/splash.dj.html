@@ -1,168 +1,15 @@
-<!DOCTYPE html><html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>baby ketten karaoke</title>
-<style type="text/css"> 
-<!-- 
-body  {
-	font: 100% Verdana, Arial, Helvetica, sans-serif;
-	background: #000000	;
-	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
-	padding: 0;
-	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
-	color: #666;
-	background-color: #000;
-	background-image: url();
-}
-.twoColLiqLtHdr #container {
-	width: 781px;  /* this will create a container 80% of the browser width */
-	background: #000000;
-	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
-	border: 0px solid #000000;
-	text-align: left; /* this overrides the text-align: center on the body element. */
-	color: #666;
-} 
-.twoColLiqLtHdr #header { 
-	background: #000000; 
-	padding: 0 0px;  /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
-} 
-.twoColLiqLtHdr #header h1 {
-	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
-	padding: 0px 0; /* using padding instead of margin will allow you to keep the element away from the edges of the div */
-}
+{% extends "website_base.dj.html" %} {% load static %}
+{% block extra_head %}
 
-/* Tips for sidebar1:
-1. since we are working in percentages, it's best not to use padding on the sidebar. It will be added to the width for standards compliant browsers creating an unknown actual width. 
-2. Space between the side of the div and the elements within it can be created by placing a left and right margin on those elements as seen in the ".twoColLiqLtHdr #sidebar1 p" rule.
-3. Since Explorer calculates widths after the parent element is rendered, you may occasionally run into unexplained bugs with percentage-based columns. If you need more predictable results, you may choose to change to pixel sized columns.
-*/
-.twoColLiqLtHdr #sidebar1 {
-	float: left;
-	width: 180px; /* since this element is floated, a width must be given */
-	background: #cc0000; /* the background color will be displayed for the length of the content in the column, but no further */
-	padding: 0px 0; /* top and bottom padding create visual space within this div  */
-	color: #666;
-	font-weight: bold;
-	font-family: "Arial Black", Gadget, sans-serif;
-}
-.twoColLiqLtHdr #sidebar1 h3, .twoColLiqLtHdr #sidebar1 p {
-	margin-left: 0px; /* the left and right margin should be given to every element that will be placed in the side columns */
-	margin-right: 0px;
-	text-align: inherit;
-	color: #FFF;
-	font-size: large;
-	font-weight: bold;
-}
-
-/* Tips for mainContent:
-1. the space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
-2. to avoid float drop at a supported minimum 800 x 600 resolution, elements within the mainContent div should be 430px or smaller (this includes images).
-3. in the Internet Explorer Conditional Comment below, the zoom property is used to give the mainContent "hasLayout." This avoids several IE-specific bugs.
-*/
-.twoColLiqLtHdr #mainContent {
-	margin: 0 20px 0 26%; /* the right margin can be given in percentages or pixels. It creates the space down the right side of the page. */
-	color: #FFF;
-	font-size: 100%;
-	text-align: left;
-} 
-.twoColLiqLtHdr #footer { 
-	padding: 0 0px; /* this padding matches the left alignment of the elements in the divs that appear above it. */
-	background:#cc0000
-	;
-} 
-.twoColLiqLtHdr #footer p {
-	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
-	padding: 0px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
-}
-
-/* Miscellaneous classes for reuse */
-.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
-	float: right;
-	margin-left: 0px;
-}
-.fltlft { /* this class can be used to float an element left in your page */
-	float: left;
-	margin-right: 0px;
-}
-.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
-	clear:both;
-    height:0;
-    font-size: 1px;
-    line-height: 0px;
-}
-.twoColLiqLtHdr #container #mainContent h1 {
-	color: #999;
-}
-.twoColLiqLtHdr #container #mainContent h2 {
-	color: #666;
-	text-align: left;
-}
-.twoColLiqLtHdr #container #sidebar1 h3 {
-	color: #999;
-	font-size: x-large;
-	border-top-color: #000;
-	top: 0px;
-}
-.twoColLiqLtHdr #container #mainContent #head {
-	color: #666;
-}
-.twoColLiqLtHdr #container #sidebar1 p {
-	font-weight: normal;
-}
-.twoColLiqLtHdr #container #sidebar1 p {
-	font-size: medium;
-}
---> 
-</style><!--[if IE]>
-<style type="text/css"> 
-/* place css fixes for all versions of IE in this conditional comment */
-.twoColLiqLtHdr #sidebar1 { padding-top: 30px; }
-.twoColLiqLtHdr #mainContent { zoom: 1; padding-top: 15px; }
-/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
-</style>
-<![endif]-->
-<link href="untitled.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-<!--
-a:link {
-	color: #FFF;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #999;
-}
-a:hover {
-	text-decoration: none;
-	color: #F00;
-}
-a:active {
-	text-decoration: none;
-	color: #F00;
-}
-.twoColLiqLtHdr p {
-	font-weight: bold;
-}
-.twoColLiqLtHdr p {
-	font-size: x-large;
-}
-.twoColLiqLtHdr p {
-	color: #FFF;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-weight: normal;
-	font-size: x-large;
-}
--->
-</style></head>
-
-<body bgcolor="#000000" link="#FFFFFF" vlink="#999999" class="twoColLiqLtHdr">
+{% endblock extra_head %}
+{% block content %}
 
 <div id="container"> 
   <div id="header">
   <h1 align="top">&nbsp;</h1></div><div id="footer">
 <!-- end #footer --></div></div>
 <p>
-  <img src="graphics/bkklogobwtouchup.jpg" width="800" height="271" /><br />
+  <img src="{% static "website/bkklogobwtouchup.jpg" %}" width="800" height="271" /><br />
   <br />
    <a href=" {% url "website:index" %} " target="_top">ENTER BKK OREGON</a><br />
 <a href="{% url "washingtonsite:index" %}">ENTER BKK WASHINGTON</a>
@@ -172,8 +19,7 @@ a:active {
 
 <p style="font-size: 18px"><br />
   R USING A MOBILULAR D-VICE  4 SONG SERCH?</p>
-<p style="font-size: 18px"><a href="http://itunes.apple.com/us/app/baby-ketten/id368869099?mt=8" target="_blank"><img src="graphics/os logos/apple.png" width="100" height="100" alt="iphone app!" longdesc="http://itunes.apple.com/us/app/baby-ketten/id368869099?mt=8" /></a><a href="http://book.babyketten.com" target="_blank"><img src="graphics/os logos/google-android.png" width="100" height="100" alt="android web app!" /></a><a href="http://book.babyketten.com" target="_blank"><img src="graphics/os logos/windows.png" width="100" height="100" alt="windows phone web app!" /></a></p>
+<p style="font-size: 18px"><a href="http://itunes.apple.com/us/app/baby-ketten/id368869099?mt=8" target="_blank"><img src="{% static "website/apple.png" %}" width="100" height="100" alt="iphone app!" longdesc="http://itunes.apple.com/us/app/baby-ketten/id368869099?mt=8" /></a><a href="http://book.babyketten.com" target="_blank"><img src="{% static "website/google-android.png" %}" width="100" height="100" alt="android web app!" /></a><a href="http://book.babyketten.com" target="_blank"><img src="{% static "website/windows.png" %}" width="100" height="100" alt="windows phone web app!" /></a></p>
 <p style="font-size: 18px"><br />
 </p>
-</body>
-</html>
+{% endblock content %}
