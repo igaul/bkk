@@ -1,7 +1,8 @@
 {% extends "washingtonsite_base.dj.html" %}{% load static %}
 {% block content %}
-<h1 id="head">links!</h1>
-<div class="col items-center gap-4 border">
+<div class="col px-4">
+<h1 class="text-4xl font-bold">links!</h1>
+<div class="col items-center gap-8">
     <div class="row gap-2">
     <a href="http://www.facebook.com/pages/baby-ketten-karaoke-WA/400916669017?ref=ts" target="_blank">
         <img src="{% static "washingtonsite/fb.png" %}" width="75" height="75" alt="baby ketten karaoke washington on facebook" />
@@ -10,9 +11,10 @@
         <img src="{% static "washingtonsite/twitter.png" %}" width="75" height="75" alt="follow baby ketten karaoke on twitter" />
     </a>
 </div>
-<a class="mt-20" href="{% url "website:index" %}">
+<a href="{% url "website:index" %}">
     <img src="{% static "washingtonsite/bkklogolinkor.gif" %}" width="350" height="121" alt="bkk in oregon!" />
 </a>
 
+</div>
 </div>
 {% endblock content %}
