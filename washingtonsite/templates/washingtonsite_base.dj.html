@@ -1,8 +1,8 @@
 {% comment %} ... {% endcomment %}
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">{% load static %}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>baby ketten karaoke</title>
+<title> {% block title %}{% endblock title %} baby ketten karaoke</title>
 <style type="text/css"> 
 <!-- 
 body  {
@@ -139,20 +139,20 @@ a:active {
 
 <div id="container"> 
   <div id="header">
-    <h1 align="top"><a href="bkkwa.html"><img src="graphics/bkklogobwproject2wa.gif" alt="home" width="781" height="271" align="top" /></a></h1>
+    <h1 align="top"><a href=" {% url "washingtonsite:index" %} "><img src="{% static "washingtonsite/bkklogobwproject2wa.gif" %}" alt="home" width="781" height="271" align="top" /></a></h1>
   <!-- end #header --></div>
   <div id="sidebar1">
     <h3>
       <!-- end #sidebar1 -->
-      <img src="graphics/sidebar.gif" width="180" height="695" hspace="0" vspace="0" border="0" align="top" usemap="#Map" />
+      <img src="{% static "washingtonsite/sidebar.gif" %}" width="180" height="695" hspace="0" vspace="0" border="0" align="top" usemap="#Map" />
       <map name="Map" id="Map">
         <area shape="poly" coords="58,212,57,212" href="#" />
-        <area shape="poly" coords="4,189,174,189,174,224,4,231" href="bkklocationswa.html" alt="locations" />
-        <area shape="poly" coords="3,80,174,84,174,137,4,136" href="bkstorywa.html" alt="history of baby ketten" />
-        <area shape="poly" coords="5,232,175,226,177,259,4,270" href="bkkmediawa.html" alt="photos/videos" />
-        <area shape="poly" coords="5,137,177,139,173,186,5,184" href="bkklinkswa.html" alt="links" />
-        <area shape="poly" coords="5,274,174,265,176,330,7,328" href="bkksongswa.html" alt="song selection" />
-        <area shape="poly" coords="3,41,176,36,174,79,4,75" href="bkkcontactwa.html" alt="contact" />
+        <area shape="poly" coords="4,189,174,189,174,224,4,231" href="{% url "washingtonsite:calendar" %}" alt="locations" />
+        <area shape="poly" coords="3,80,174,84,174,137,4,136" href="{% url "washingtonsite:story" %}" alt="history of baby ketten" />
+        <area shape="poly" coords="5,232,175,226,177,259,4,270" href="{% url "washingtonsite:media" %}" alt="photos/videos" />
+        <area shape="poly" coords="5,137,177,139,173,186,5,184" href="{% url "washingtonsite:links" %}" alt="links" />
+        <area shape="poly" coords="5,274,174,265,176,330,7,328" href="{% url "washingtonsite:songs" %}" alt="song selection" />
+        <area shape="poly" coords="3,41,176,36,174,79,4,75" href="{% url "washingtonsite:contact" %}" alt="contact" />
       </map>
     </h3>
   </div>
