@@ -2,3 +2,6 @@
     font-family: 'Anton';
     src: url('/static/website/fonts/Anton-Regular.woff2') format('woff2') ;
 }
+.arial {
+    font-family: 'Arial', sans-serif;
+}
