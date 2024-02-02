@@ -869,6 +869,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -926,8 +931,14 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* @font-face {
+  font-family: 'Anton';
+} */
+
 body {
   font-family: 'Anton', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {
