@@ -25,13 +25,13 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from website.urls import urlpatterns as website_urls
 
-urlpatterns = [path("hamsters/", admin.site.urls), path("", include(website_urls)),
-               
-    path('cms/', include(wagtailadmin_urls)),
-    path('documents/', include(wagtaildocs_urls)),
-    path('pages/', include(wagtail_urls)),
-               
-               ]
+urlpatterns = [
+    path("hamsters/", admin.site.urls),
+    path("", include(website_urls)),
+    path("cms/", include(wagtailadmin_urls)),
+    path("documents/", include(wagtaildocs_urls)),
+    path("pages/", include(wagtail_urls)),
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

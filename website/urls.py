@@ -7,7 +7,7 @@ from website.views import index, menus, splash
 # TODO: move this to project/urls.py
 
 
-oregon_urls = [path("", index, name="index"),path("menus", menus, name="menus")]
+oregon_urls = [path("", index, name="index"), path("menus", menus, name="menus")]
 
 urlpatterns = [
     path("", splash, name="splash"),

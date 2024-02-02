@@ -87,7 +87,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     #
-    "django_browser_reload", # DEBUG only
+    "django_browser_reload",  # DEBUG only
     #
     "users",
     "website",
@@ -102,7 +102,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 if DEBUG:
     MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
@@ -254,4 +254,4 @@ AUTH_USER_MODEL = "users.CustomUser"
 # WAGTAIL
 WAGTAIL_SITE_NAME = "Baby Ketten"
 WAGTAILADMIN_BASE_URL = "http://192.168.1.233:4455"
-''' unused ... TODO: set to bkk if we use wt '''
+""" unused ... TODO: set to bkk if we use wt """
