@@ -104,6 +104,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
+if DEBUG:
+    MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
 
 ROOT_URLCONF = "project.urls"
 
