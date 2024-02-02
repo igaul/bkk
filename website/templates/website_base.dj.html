@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'tw.css' %}" />
     <link rel="icon" href="{% static "favicon.ico" %}" sizes="32x32" />
-    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> {% endcomment %}
     {#  TODO: meta tags / seo  #}
     <link
       rel="preload"
       {% comment %} href="https://cdn.karanook.com/assets/montserrat_latin.woff2" {% endcomment %}
-      href="{% static 'fonts/Anton-Regular.tff' %}"
+      href="{% static 'website/fonts/Anton-Regular.woff2' %}"
       as="font"
       type="font/woff2"
       crossorigin
     />  
-    
+    <link rel="stylesheet" href="{% static "website/styles.css" %}">    
     {% block extra_head %}{% endblock extra_head %} {% block extra_styles %} {% endblock extra_styles %}
     <title>{% block page_title %}{% endblock page_title %} Baby Ketten Karaoke</title>
 </head>

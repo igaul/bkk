@@ -12,9 +12,6 @@
     @apply flex flex-row gap-1;
   }
 }
-/* @font-face {
-  font-family: 'Anton';
-} */
 body {
   font-family: 'Anton', Arial, Helvetica, sans-serif;
   font-weight: 400;
