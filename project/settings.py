@@ -87,6 +87,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     #
+    "django_browser_reload", # DEBUG only
     #
     "users",
     "website",
@@ -101,6 +102,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = "project.urls"
@@ -192,8 +194,13 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# TODO: use whitenoise
+# TODO: use whitenoise (or s3)
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Media files
+# TODO: use S3 or nginx container
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -240,3 +247,9 @@ else:
 
 # USER
 AUTH_USER_MODEL = "users.CustomUser"
+
+
+# WAGTAIL
+WAGTAIL_SITE_NAME = "Baby Ketten"
+WAGTAILADMIN_BASE_URL = "http://192.168.1.233:4455"
+''' unused ... TODO: set to bkk if we use wt '''
