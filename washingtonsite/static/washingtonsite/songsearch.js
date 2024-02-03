@@ -9,7 +9,7 @@ let lastResults = undefined;
 let currPage = 0;
 const pageSize = 25;
 
-function mountResults(data) {
+function renderResults(data) {
   while (tableBodyEl.firstChild) {
     tableBodyEl.removeChild(tableBodyEl.firstChild);
   }
@@ -47,7 +47,7 @@ function search(query, filter) {
 
       // const data = resp.data.slice(currPage * pageSize, (currPage + 1) * pageSize);
 
-      mountResults(resp.data);
+      renderResults(resp.data);
       tableBodyEl.parentElement.parentElement.classList.remove("hidden");
     })
     .catch(console.error)
