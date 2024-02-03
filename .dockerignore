@@ -4,6 +4,7 @@ fly.toml
 .vscode/
 node_modules/
 apps/
+venv312/
 venv*
 __pycache__/
 
