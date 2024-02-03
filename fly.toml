@@ -40,5 +40,5 @@ console_command = '/code/manage.py shell'
   destination = "/data"
 
 [[statics]]
-  guest_path = '/code/static'
+  guest_path = '/code/staticfiles'
   url_prefix = '/static/'
