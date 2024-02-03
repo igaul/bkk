@@ -17,7 +17,7 @@ console_command = '/code/manage.py shell'
   DB_NAME = "/data/db.sqlite3"
   # TODO: use this env to set CMD
   # GUNICORN_LOG_FILE = "/data/gunicorn.log"
-  # APP_LOG_FILE = "/data/app.log"
+  APP_LOG_FILE = "/data/app.log"
   #
   ADD_FLY_HOST = 'true'
 

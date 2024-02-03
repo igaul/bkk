@@ -20,5 +20,5 @@ RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "project.wsgi"]
-# CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "project.wsgi", "--access-logfile","/data/gunicorn.log","--error-logfile","/data/gunicorn-error.log"]
+# CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "project.wsgi"]
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "project.wsgi", "--access-logfile","/data/gunicorn.log","--error-logfile","/data/gunicorn-error.log"]
