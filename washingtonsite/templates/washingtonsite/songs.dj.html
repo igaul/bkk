@@ -71,6 +71,7 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
         fetch(url)
             .then(response => response.json())
             .then(resp => {
+                console.log(resp);
                 if(!resp || !resp.data){
                     throw new Error('no data')
                 }

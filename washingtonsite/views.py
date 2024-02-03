@@ -69,9 +69,8 @@ def song_search(request: HttpRequest) -> TemplateResponse:
             # TODO: just proxy the data (?or cache here? with short limit)
             # TODO: paginate resp ???
             data = result.json()
-            # print(data)
-            data = json.dumps({'data':data})
-            return JsonResponse(data, safe=False)
+            log.info(f"got {len(data)} results")
+            return JsonResponse({'data':data}, safe=False)
         else:
             print("ERR", result)
             return JsonResponse({"error": "no results"})
