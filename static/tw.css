@@ -1021,6 +1021,14 @@ a:active {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
+@media (min-width: 640px) {
+  .sm\:row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+}
+
 .visited\:text-white:visited {
   color: rgb(255 255 255 );
 }
@@ -1041,6 +1049,10 @@ a:active {
 }
 
 @media (min-width: 640px) {
+  .sm\:gap-8 {
+    gap: 2rem;
+  }
+
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
