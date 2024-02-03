@@ -1,4 +1,4 @@
-{% extends "washingtonsite_base.dj.html" %}
+{% extends "washingtonsite_base.dj.html" %}{% load static %}
 {% comment %} {% block extra_head %}
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript">
@@ -46,7 +46,7 @@
             </select>
             <input class="rounded px-2" id="search" name="search" type="textbox" />
             <input class="rounded px-2 bg-slate-200 text-black shadow" id="btnSearch" type="submit" value="Go!" />
-            <img id="spinner" src="ajaxload.gif" />
+            <img id="spinner" src="{% static "washingtonsite/ajaxload.gif" %}" />
 
     </form>
 
