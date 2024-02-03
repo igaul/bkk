@@ -34,7 +34,7 @@ print("BASE_DIR", BASE_DIR)
 
 FLY_APP_NAME = getenv("FLY_APP_NAME")
 FLY_HOST = f"{FLY_APP_NAME}.fly.dev"
-ADD_FLY_HOST = FLY_APP_NAME and getenv("ADD_FLY_HOST", "False") == "True"
+ADD_FLY_HOST = FLY_APP_NAME and getenv("ADD_FLY_HOST", "False").lower() == "true"
 
 
 # SECURITY WARNING: keep the secret key used in production secret!

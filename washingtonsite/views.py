@@ -72,7 +72,7 @@ def song_search(request: HttpRequest) -> TemplateResponse:
             data = json.dumps(data)
             return JsonResponse(data, safe=False)
         else:
-            print(result)
+            print("ERR",result)
             return JsonResponse({"error": "no results"})
 
     except Exception as e:
