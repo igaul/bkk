@@ -49,14 +49,14 @@ body  {
 	font-weight: bold;
 	font-family: "Arial Black", Gadget, sans-serif;
 }
-.twoColLiqLtHdr #sidebar1 h3, .twoColLiqLtHdr #sidebar1 p {
+{% comment %} .twoColLiqLtHdr #sidebar1 h3, .twoColLiqLtHdr #sidebar1 p {
 	margin-left: 0px; /* the left and right margin should be given to every element that will be placed in the side columns */
 	margin-right: 0px;
 	text-align: inherit;
 	color: #FFF;
 	font-size: large;
 	font-weight: bold;
-}
+} {% endcomment %}
 
 /* Tips for mainContent:
 1. the space between the mainContent and sidebar1 is created with the left margin on the mainContent div.  No matter how much content the sidebar1 div contains, the column space will remain. You can remove this left margin if you want the #mainContent div's text to fill the #sidebar1 space when the content in #sidebar1 ends.
@@ -124,12 +124,17 @@ body  {
 
 <div id="container"> 
   <div id="header">
-    <h1 align="top"><a href=" {% url "washingtonsite:index" %} "><img src="{% static "washingtonsite/bkklogobwproject2wa.gif" %}" alt="home" width="781" height="271" align="top" /></a></h1>
+    <h1 align="top"><a href=" {% url "washingtonsite:index" %} ">
+		{% comment %} <img src="{% static "washingtonsite/bkklogobwproject2wa.gif" %}" alt="home" width="781" height="271" align="top" /> {% endcomment %}
+		<img src="{% static "washingtonsite/bkklogobwproject2wa.gif" %}" alt="home" class="w-full max-w-[100vw] h-auto" align="top" />
+
+	</a></h1>
   <!-- end #header --></div>
   <div id="sidebar1">
-    <h3>
+    <h3 class="w-100">
       <!-- end #sidebar1 -->
-      <img src="{% static "washingtonsite/sidebar.gif" %}" width="180" height="695" hspace="0" vspace="0" border="0" align="top" usemap="#Map" />
+      {% comment %} <img src="{% static "washingtonsite/sidebar.gif" %}" width="180" height="695" hspace="0" vspace="0" border="0" align="top" usemap="#Map" /> {% endcomment %}
+	  <img src="{% static "washingtonsite/sidebar.gif" %}" class="w-28 h-full sm:w-44" hspace="0" vspace="0" border="0" align="top" usemap="#Map" />
       <map name="Map" id="Map">
         <area shape="poly" coords="58,212,57,212" href="#" />
         <area shape="poly" coords="4,189,174,189,174,224,4,231" href="{% url "washingtonsite:calendar" %}" alt="locations" />
