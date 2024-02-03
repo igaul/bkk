@@ -1,10 +1,7 @@
-const baseUrl = "{% url 'washingtonsite:song_search' %}";
-const ww = window.location.href;
-console.log({ baseUrl, ww });
+const baseUrl = "/wa/song-search";
 const spinnerEl = document.getElementById("spinner");
 spinnerEl.style.display = "none";
 const searchFormEl = document.getElementById("searchform");
-const resultsEl = document.getElementById("results");
 const tableBodyEl = document.getElementById("tbresults");
 let lastQuery = "";
 let lastFilter = "";
