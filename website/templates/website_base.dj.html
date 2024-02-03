@@ -16,6 +16,10 @@
     />  
     <link rel="stylesheet" href="{% static "website/styles.css" %}">    
     {% block extra_head %}{% endblock extra_head %} {% block extra_styles %} {% endblock extra_styles %}
+    {% block extra_meta_head %}
+    {# TODO: all meta tags for bkk-or, override base for washington #}
+    <meta name="description" content="Baby Ketten Karaoke: the world's greatest karaoke">
+    {% endblock extra_meta_head %}
     <title>{% block page_title %}{% endblock page_title %} Baby Ketten Karaoke</title>
 </head>
 <body bgcolor="#000000" link="#FFFFFF" vlink="#999999" class="twoColLiqLtHdr">
