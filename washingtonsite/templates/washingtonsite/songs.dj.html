@@ -35,9 +35,6 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
 {% block bottom_scripts %}
 <script>
     const baseUrl = "{% url 'washingtonsite:song_search' %}";
-    const ww = window.location.href;
-    const bb = "/wa/song-search"
-    console.log({baseUrl,ww,bb});
     const spinnerEl = document.getElementById('spinner');
     spinnerEl.style.display = 'none';
     const searchFormEl = document.getElementById('searchform');
