@@ -1,7 +1,6 @@
 from django.urls import include, path
 
-from .views import (calendar, contact, index, links, media, song_search, songs,
-                    story)
+from .views import calendar, contact, index, links, media, song_search, songs, story
 
 # remap:
 # bkkwa.html -> index

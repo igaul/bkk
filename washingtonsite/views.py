@@ -3,8 +3,12 @@ from logging import getLogger
 from uuid import UUID, uuid4
 
 from django.conf import settings
-from django.http import (HttpRequest, HttpResponseNotFound,
-                         HttpResponseRedirect, JsonResponse)
+from django.http import (
+    HttpRequest,
+    HttpResponseNotFound,
+    HttpResponseRedirect,
+    JsonResponse,
+)
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
 from django.urls import reverse
@@ -12,6 +16,7 @@ from django.views.decorators.http import require_http_methods
 from requests import get as http_get
 
 log = getLogger(__name__)
+
 
 def index(request: HttpRequest) -> TemplateResponse:
     """Render the index page."""
@@ -49,7 +54,7 @@ def contact(request: HttpRequest) -> TemplateResponse:
 
 
 def song_search(request: HttpRequest) -> TemplateResponse:
-    """ proxy shep's song search """
+    """proxy shep's song search"""
 
     base_url = "https://bkk.schepman.org/jsonp?search="
 
@@ -72,7 +77,7 @@ def song_search(request: HttpRequest) -> TemplateResponse:
             data = json.dumps(data)
             return JsonResponse(data, safe=False)
         else:
-            print("ERR",result)
+            print("ERR", result)
             return JsonResponse({"error": "no results"})
 
     except Exception as e:

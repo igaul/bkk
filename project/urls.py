@@ -28,12 +28,14 @@ from website.urls import urlpatterns as website_urls
 urlpatterns = [
     path("hamsters/", admin.site.urls),
     path("", include(website_urls)),
-    path("cms/", include(wagtailadmin_urls)),
-    path("documents/", include(wagtaildocs_urls)),
-    path("pages/", include(wagtail_urls)),
 ]
 
 if settings.DEBUG:
+    # until wagtail is set up...
+    path("cms/", include(wagtailadmin_urls)),
+    path("documents/", include(wagtaildocs_urls)),
+    path("pages/", include(wagtail_urls)),
+    #
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))

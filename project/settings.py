@@ -66,19 +66,7 @@ if DEBUG:
 # Application definition
 
 INSTALLED_APPS = [
-    "wagtail.contrib.forms",
-    "wagtail.contrib.redirects",
-    "wagtail.embeds",
-    "wagtail.sites",
-    "wagtail.users",
-    "wagtail.snippets",
-    "wagtail.documents",
-    "wagtail.images",
-    "wagtail.search",
-    "wagtail.admin",
-    "wagtail",
-    "modelcluster",
-    "taggit",
+    # wagtil
     #
     "django.contrib.admin",
     "django.contrib.auth",
@@ -94,6 +82,24 @@ INSTALLED_APPS = [
     "washingtonsite",
 ]
 
+# until wagtail is setup
+if DEBUG:
+    INSTALLED_APPS = [
+        "wagtail.contrib.forms",
+        "wagtail.contrib.redirects",
+        "wagtail.embeds",
+        "wagtail.sites",
+        "wagtail.users",
+        "wagtail.snippets",
+        "wagtail.documents",
+        "wagtail.images",
+        "wagtail.search",
+        "wagtail.admin",
+        "wagtail",
+        "modelcluster",
+        "taggit",
+    ] + INSTALLED_APPS
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -102,9 +108,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 if DEBUG:
+    # until wagtail is set up
+    MIDDLEWARE.append("wagtail.core.middleware.RedirectMiddleware")
+    # debug only
     MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
 
 ROOT_URLCONF = "project.urls"
