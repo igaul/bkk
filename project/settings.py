@@ -65,51 +65,34 @@ if DEBUG:
 
 # Application definition
 # until wagtail is setup, dont apply...
-INSTALLED_APPS = (
-    [
-        "wagtail.contrib.forms",
-        "wagtail.contrib.redirects",
-        "wagtail.embeds",
-        "wagtail.sites",
-        "wagtail.users",
-        "wagtail.snippets",
-        "wagtail.documents",
-        "wagtail.images",
-        "wagtail.search",
-        "wagtail.admin",
-        "wagtail",
-        "modelcluster",
-        "taggit",
-        #
-        "django.contrib.admin",
-        "django.contrib.auth",
-        "django.contrib.contenttypes",
-        "django.contrib.sessions",
-        "django.contrib.messages",
-        "django.contrib.staticfiles",
-        #
-        "django_browser_reload",  # DEBUG only
-        #
-        "users",
-        "website",
-        "washingtonsite",
-    ]
-    if DEBUG
-    else [
-        "django.contrib.admin",
-        "django.contrib.auth",
-        "django.contrib.contenttypes",
-        "django.contrib.sessions",
-        "django.contrib.messages",
-        "django.contrib.staticfiles",
-        #
-        # "django_browser_reload",  # DEBUG only
-        #
-        "users",
-        "website",
-        "washingtonsite",
-    ]
-)
+INSTALLED_APPS = [
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    "wagtail.embeds",
+    "wagtail.sites",
+    "wagtail.users",
+    "wagtail.snippets",
+    "wagtail.documents",
+    "wagtail.images",
+    "wagtail.search",
+    "wagtail.admin",
+    "wagtail",
+    "modelcluster",
+    "taggit",
+    #
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    #
+    "django_browser_reload",  # DEBUG only
+    #
+    "users",
+    "website",
+    "washingtonsite",
+]
 
 
 MIDDLEWARE = [
