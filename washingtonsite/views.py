@@ -1,3 +1,4 @@
+import json
 from logging import getLogger
 from uuid import UUID, uuid4
 
@@ -46,6 +47,8 @@ def contact(request: HttpRequest) -> TemplateResponse:
     """Render the contact page."""
     return TemplateResponse(request, "washingtonsite/contact.dj.html")
 
+TEST_DATA_RESP = [{'artist': 'buffalo springfield', 'title': "for what it's worth", 'brand': ''}, {'artist': 'buffalo springfield', 'title': 'kind woman', 'brand': ''}, {'artist': 'buffalo springfield', 'title': "nowadays clancy can't even sing", 'brand': ''}, {'artist': 'buffalo springfield', 'title': 'sit down, i think i love you', 'brand': ''}, {'artist': 'disney (princesses)', 'title': 'every girl can be a princess', 'brand': ''}, {'artist': 'disney (princesses)', 'title': 'if you can dream', 'brand': ''}, {'artist': 'disney (the princess & the frog)', 'title': 'friends on the other side', 'brand': ''}, {'artist': 'dj jazzy jeff & the fresh prince', 'title': 'a nightmare on my street', 'brand': ''}, {'artist': 'dj jazzy jeff & the fresh prince', 'title': 'boom shake the room', 'brand': ''}, {'artist': 'dj jazzy jeff & the fresh prince', 'title': 'fresh prince of bel-air theme', 'brand': ''}]
+
 def song_search(request: HttpRequest) -> TemplateResponse:
     """ proxy shep's song search """
 
@@ -60,13 +63,21 @@ def song_search(request: HttpRequest) -> TemplateResponse:
         if not query:
             return JsonResponse({"error": "no query"})
 
-        result = http_get(f"{base_url}{query}&searchBy={filter}")
+        return JsonResponse({"data":TEST_DATA_RESP}, safe=False)
+
+        result = http_get(f"{base_url}{query}&searchby={filter}")
 
         if result.ok:
+            # TODO: just proxy the data (?or cache here? with short limit)
+            # TODO: paginate resp ???
             data = result.json()
-            print(data)
-            return JsonResponse(data)
+            # print(data)
+            data = json.dumps(data)
+            return JsonResponse(data, safe=False)
+        else:
+            print(result)
+            return JsonResponse({"error": "no results"})
 
     except Exception as e:
         log.exception(e)
-        return HttpResponseNotFound()
+    return HttpResponseNotFound()

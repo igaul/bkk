@@ -1,37 +1,4 @@
 {% extends "washingtonsite_base.dj.html" %}{% load static %}
-{% comment %} {% block extra_head %}
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        $("#spinner").hide();
-        $("#searchform").submit(function() {
-            search = $("#search").val();
-            searchby = $("#searchby").val();
-
-            if (search != "") {
-                ajaxSearch(search, searchby);
-            }
-            return false;
-        });
-    });
-    
-    function ajaxSearch(search, searchby) {
-        $("#spinner").show();
-        $.getJSON("https://bkk.schepman.org/jsonp?search=" + search + "&searchby=" + searchby + "&jsoncallback=?",
-        function(data) {
-            $("#results").empty();
-            var table = "<table><tr><th>Artist</th><th>Title</th></tr>";
-            //array of maps
-            $.each(data, function(index, value) {
-                table += "<tr><td>" + value['artist'] 
-                        + "</td>" + "<td>" + value['title'] + "</td></tr>";
-            });
-            $("#spinner").hide();
-            $("#results").html(table);
-        });
-    }
-</script>
-{% endblock extra_head %} {% endcomment %}
 {% block content %}
 <div class="col gap-4 p-4">
     <h1 class="text-4xl font-semibold">find your faves!</h1>
@@ -50,10 +17,13 @@
 
     </form>
 
-
-<div id="results"></div>
-<div id="form2"></div>
-<div id="results2"></div>
+    <div class="hidden">
+        <table>
+            <tr class="text-white"><th>Artist</th><th>Title</th></tr>
+            <tbody id="tbresults">
+            </tbody>
+        </table>
+    </div>
 
 
 
@@ -64,25 +34,57 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
 {% endblock content %}
 {% block bottom_scripts %}
 <script>
+    const baseUrl = "{% url 'washingtonsite:song_search' %}";
+    const ww = window.location.href;
+    const bb = "/wa/song-search"
+    console.log({baseUrl,ww,bb});
     const spinnerEl = document.getElementById('spinner');
     spinnerEl.style.display = 'none';
     const searchFormEl = document.getElementById('searchform');
-    const resultsEl = document.getElementById('results');
+    const tableBodyEl = document.getElementById('tbresults');
+    let lastQuery = '';
+    let lastFilter = '';
+    let lastResults = undefined;
+    let currPage = 0;
+    const pageSize = 25;
+
+    function mountResults(data){
+        while(tableBodyEl.firstChild){
+            tableBodyEl.removeChild(tableBodyEl.firstChild);
+        }
+        data.forEach(function(item){
+            const tr = document.createElement('tr');
+            const artist = document.createElement('td');
+            artist.innerText = item.artist;
+            tr.appendChild(artist);
+            const title = document.createElement('td');
+            title.innerText = item.title;
+            tr.appendChild(title);
+            tableBodyEl.appendChild(tr);
+        });
+    }
 
     function search(query, filter){
         spinnerEl.style.display = 'block';
-        const url = 'https://bkk.schepman.org/jsonp?search=' + query + '&searchby=' + filter + '&jsoncallback=?';
-        fetch(url, {method: 'GET'})
+        const url = baseUrl+"?search=" + encodeURIComponent(query) + '&searchby=' + encodeURIComponent(filter);
+        
+        lastQuery = query;
+        lastFilter = filter;
+        
+        fetch(url)
             .then(response => response.json())
-            .then(data => {
-                let table = '<table><tr><th>Artist</th><th>Title</th></tr>';
-                data.forEach(function(item){
-                    table += '<tr><td>' + item.artist + '</td><td>' + item.title + '</td></tr>';
-                });
-                spinnerEl.style.display = 'none';
-                resultsEl.innerHTML = table;
+            .then(resp => {
+                if(!resp || !resp.data){
+                    throw new Error('no data')
+                }
+                lastResults = resp.data;
+
+                // const data = resp.data.slice(currPage * pageSize, (currPage + 1) * pageSize);
+                
+                mountResults(resp.data);
+                tableBodyEl.parentElement.parentElement.classList.remove('hidden');
             })
-            .catch(error => console.log(error))
+            .catch(console.error)
             .finally(() => spinnerEl.style.display = 'none');
     }
 
