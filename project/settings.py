@@ -64,27 +64,9 @@ if DEBUG:
 
 
 # Application definition
-
-INSTALLED_APPS = [
-    # wagtil
-    #
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    #
-    "django_browser_reload",  # DEBUG only
-    #
-    "users",
-    "website",
-    "washingtonsite",
-]
-
-# until wagtail is setup
-if DEBUG:
-    INSTALLED_APPS = [
+# until wagtail is setup, dont apply...
+INSTALLED_APPS = (
+    [
         "wagtail.contrib.forms",
         "wagtail.contrib.redirects",
         "wagtail.embeds",
@@ -98,7 +80,37 @@ if DEBUG:
         "wagtail",
         "modelcluster",
         "taggit",
-    ] + INSTALLED_APPS
+        #
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        #
+        "django_browser_reload",  # DEBUG only
+        #
+        "users",
+        "website",
+        "washingtonsite",
+    ]
+    if DEBUG
+    else [
+        "django.contrib.admin",
+        "django.contrib.auth",
+        "django.contrib.contenttypes",
+        "django.contrib.sessions",
+        "django.contrib.messages",
+        "django.contrib.staticfiles",
+        #
+        # "django_browser_reload",  # DEBUG only
+        #
+        "users",
+        "website",
+        "washingtonsite",
+    ]
+)
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -108,11 +120,9 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 if DEBUG:
-    # until wagtail is set up
-    MIDDLEWARE.append("wagtail.core.middleware.RedirectMiddleware")
-    # debug only
     MIDDLEWARE.append("django_browser_reload.middleware.BrowserReloadMiddleware")
 
 ROOT_URLCONF = "project.urls"
