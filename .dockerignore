@@ -5,3 +5,8 @@ fly.toml
 node_modules/
 apps/
 venv*
+__pycache__/
+
+.nogit/
+.env
+.env.*
