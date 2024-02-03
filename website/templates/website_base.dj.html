@@ -19,6 +19,11 @@
     <title>{% block page_title %}{% endblock page_title %} Baby Ketten Karaoke</title>
 </head>
 <body bgcolor="#000000" link="#FFFFFF" vlink="#999999" class="twoColLiqLtHdr">
+    <div class="col bg-neutral-400 w-full items-center p-4 py-8">
+        <a href="{% url "website:index" %}"><h1 class="text-6xl uppercase text-center text-black">
+              Baby Ketten Karaoke
+          </h1></a>  
+      </div>
     {% comment %} {% include 'common/messages_list.html' %} {% endcomment %}
     <div id="container" class="block-content">{% block content %}{% endblock content %}</div>
 </body>
