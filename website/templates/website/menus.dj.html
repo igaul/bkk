@@ -1,14 +1,14 @@
 {% extends "website_base.dj.html" %} {% load static %}
 {% block content %}
 <div class="col gap-0">
-    <div class="col bg-gray-400/90 w-full items-center p-4">
+    <div class="col bg-neutral-400 w-full items-center p-4 py-8">
       <a href="{% url "website:index" %}"><h1 class="text-6xl uppercase text-center text-black">
             Baby Ketten Karaoke
         </h1></a>  
     </div>
     <div class="col bg-black px-3 py-14 gap-8 items-center">
         <div class="row gap-6 flex-wrap">
-            <img src="{% static "website/bkk-gift-card.jpg" %}" alt="gift card image" class="w-full max-w-lg rounded-3xl">
+            <img src="{% static "website/bkk-kitchen-menu.jpg" %}" alt="food menu image" class="w-full max-w-lg">
             <div class="col gap-4 text-white justify-center max-w-lg">
                 <h1 class="text-4xl text-center">
                     ALSO CHEK OWT OUR WEEKLEE SPESHALZ!!  
@@ -25,94 +25,32 @@
             </div>
         </div>
     </div>
-    <div class="col bg-black px-3 py-14 gap-8 items-center">
+    <div class="col bg-red-600 px-3 py-14 gap-8 items-center">
         <div class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
-            <img src="{% static "website/bkk-private-rooms.jpg" %}" alt="gift card image" class="w-full max-w-lg rounded-3xl">
-            <div class="col gap-4 text-white items-center max-w-lg">
-                <h1 class="text-4xl">
-                    SINGG ALLL OF THA SONGZ!
+            <img src="{% static "website/bkk-drinks-menu.jpg" %}" alt="drinks menu image" class="w-full max-w-lg">
+            <div class="col gap-4 text-white justify-center items-center max-w-lg">
+                <h1 class="text-5xl text-center">
+                    TAPP LIST, CANZ/BOTTLEZ, WINEZ, SOJU, SAKE, N/A
                 </h1>
-                <p class="text-xl text-center leading-8">
-                    FOUR SIZES &amp; STYLEZ OF ROOOMZ 2 PICK FRUM!
-                    (DONT MISS THA DROPP DOWNN OPSHUN 2 SELEKT MOAR THAN ONE HOURR! A MINIMUMM OF 2 IS RECCOMENDEDD 4 MAXXIMUM FUNTIMEZ)
+                <p class="arial text-xl text-center">
+                    SEW MANEEE OPSHUNZ!!!
                 </p>
-                <a class="p-4 bg-red-600 w-fit text-2xl" href="https://babykettenklub.square.site/s/appointments" target="_blank" >RESERV YER RUME NOWW</a>
             </div>
         </div>
     </div>
-    <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
-            <img src="{% static "website/bkk-kitchen.jpg" %}" alt="gift card image" class="w-full max-w-lg">
-            <div class="col gap-4 text-white items-center max-w-lg">
-                <h1 class="text-4xl">
-                    ALLL OF THA VEGN FUDE!
+    <div class="col bg-neutral-400 px-3 py-14 gap-8 items-center">
+        <div class="row gap-6 flex-wrap justify-center w-full max-w-6xl mx-auto">
+            <img src="{% static "website/bkk-cocktail-menu.jpg" %}" alt="cocktail menu image" class="w-full max-w-lg">
+            <div class="col gap-4 text-black justify-center max-w-lg">
+                <h1 class="text-5xl text-center">
+                    KETTEN KOCKTALEZ!!
                 </h1>
-                <div class="col text-xl text-center gap-3">
-                    <p>
-                        V-GN KOMFORT FUDE FRUM THA KETCHEN MADE WITH &lt;3 
-                    </p>
-                   <p>
-                     OPEN 4 DINE-INN 7-DAYZ-A-WEEEK
-                   </p>
-                   <p>
-                     FULL MENEW 5PM-12PM
-                   </p>
-                   <p>
-                    LATE NYTE MENEW 12-CLOSE
-                   </p>
-                </div>
-                <a class="p-4 bg-red-600 w-fit text-2xl" href="https://squareup.com/gift/7B86QEGE6WAJN/order" target="_blank" >VIEW ALL FOOOD &amp; DRINK MENEWZ</a>
+                <p class="arial text-xl">
+                    TRY EM ALL!
+                </p>
             </div>
         </div>
-    </div>
-    <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
-            <img src="{% static "website/bkk-geeks-who-drink.jpg" %}" alt="gift card image" class="w-full max-w-lg">
-            <div class="col gap-4 text-white items-center justify-center w-full max-w-lg">
-                <h1 class="text-4xl">
-                    WEEEKLEE TRIVIAH!
-                </h1>
-                <h2 class="text-xl">
-                    FREEE 2 PLAY! EVRY TUEZDEY 7-9 WITH PRIZEZ!
-                </h2>
-                <a class="p-4 bg-red-600 w-fit text-2xl" href="https://www.geekswhodrink.com/" target="_blank" >LERN MOAR</a>
-            </div>
-        </div>
-    </div>
-    <div class="col bg-red-600 px-3 py-14 gap-8 items-center text-white">
-        <h1 class="text-5xl">
-            KONTAKT US
-        </h1>
-        <p>
-            DROPP US A LINE OR STOP BY SEW WE KAN SEE YER KUTE KETTEN FACE &lt;3
-        </p>
-        <div class="row flex-wrap text-2xl justify-between w-full max-w-6xl items-center">
-            <div class="col items-center">
-                <span>EMAIL US @</span>
-                <a href="mailto:john@babyketten.com?subject=Website Contact" class="hover:text-black">JOHN@BABYKETTEN.COM</a>
-            </div>
-            <div class="row">
-                <span>
-                    CALL THA KLUB @
-                </span>
-                <a href="tel:+15034447903" class="hover:text-black">503 444-7903</a>
-            </div>
-            <div class="col">
-                <span>BABY KETTEN KLUB</span>
-                <address>
-                    <a href="https://g.page/babykettenklub?share" class="col not-italic underline hover:text-black">
-                        <span>
-                           2433 SE Powell Blvd 
-                        </span>
-                        <span>
-                            Portland, OR 97202
-                        </span>
-                        </a>
-                </address>
-            </div>
-        </div>
-    </div>
- 
-    <br><br><br>
+    </div> 
+    <br><br>
 </div>
 {% endblock content %}
