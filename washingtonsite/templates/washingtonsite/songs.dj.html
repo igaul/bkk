@@ -82,17 +82,18 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
                 spinnerEl.style.display = 'none';
                 resultsEl.innerHTML = table;
             })
-            .catch(error => {console.log(error);spinnerEl.style.display = 'none';});
+            .catch(error => console.log(error))
+            .finally(() => spinnerEl.style.display = 'none');
     }
 
     searchFormEl.addEventListener('submit', function(event) {
         event.preventDefault();
         const searchEl = document.getElementById('search');
         const searchbyEl = document.getElementById('searchby');
-        const search = searchEl.value;
-        const searchby = searchbyEl.value;
-        if (search !== '') {
-            ajaxSearch(search, searchby);
+        const query = searchEl.value;
+        const filter = searchbyEl.value;
+        if (query !== '') {
+            search(query, filter);
         }
     });
 </script>

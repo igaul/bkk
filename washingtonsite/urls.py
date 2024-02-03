@@ -1,6 +1,7 @@
 from django.urls import include, path
 
-from .views import calendar, contact, index, links, media, songs, story
+from .views import (calendar, contact, index, links, media, song_search, songs,
+                    story)
 
 # remap:
 # bkkwa.html -> index
@@ -20,6 +21,7 @@ urlpatterns_new = [
     path("links", links, name="links"),
     path("songs", songs, name="songs"),
     path("contact", contact, name="contact"),
+    path("song-search", song_search, name="song_search"),
 ]
 
 # these should probaly just be redirects

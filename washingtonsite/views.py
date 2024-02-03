@@ -1,19 +1,16 @@
-import json
-import logging
+from logging import getLogger
 from uuid import UUID, uuid4
 
 from django.conf import settings
-from django.http import (
-    HttpRequest,
-    HttpResponseNotFound,
-    HttpResponseRedirect,
-    JsonResponse,
-)
+from django.http import (HttpRequest, HttpResponseNotFound,
+                         HttpResponseRedirect, JsonResponse)
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.views.decorators.http import require_http_methods
+from requests import get as http_get
 
+log = getLogger(__name__)
 
 def index(request: HttpRequest) -> TemplateResponse:
     """Render the index page."""
@@ -48,3 +45,28 @@ def songs(request: HttpRequest) -> TemplateResponse:
 def contact(request: HttpRequest) -> TemplateResponse:
     """Render the contact page."""
     return TemplateResponse(request, "washingtonsite/contact.dj.html")
+
+def song_search(request: HttpRequest) -> TemplateResponse:
+    """ proxy shep's song search """
+
+    base_url = "https://bkk.schepman.org/jsonp?search="
+
+    try:
+        query = request.GET.get("search", "")
+        filter = request.GET.get("searchBy", "artist")
+
+        log.info(f"searching for {query} by {filter}")
+
+        if not query:
+            return JsonResponse({"error": "no query"})
+
+        result = http_get(f"{base_url}{query}&searchBy={filter}")
+
+        if result.ok:
+            data = result.json()
+            print(data)
+            return JsonResponse(data)
+
+    except Exception as e:
+        log.exception(e)
+        return HttpResponseNotFound()
