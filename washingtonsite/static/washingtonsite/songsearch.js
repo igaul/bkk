@@ -31,34 +31,33 @@ searchFormEl.addEventListener("submit", function (event) {
   event.preventDefault();
   const query = searchEl.value;
   const filter = searchbyEl.value;
-  if (query !== "") {
-    spinnerEl.style.display = "block";
-    const url =
-      baseUrl +
-      "?search=" +
-      encodeURIComponent(query) +
-      "&searchby=" +
-      encodeURIComponent(filter);
+  if (!query) return;
+  spinnerEl.style.display = "block";
+  const url =
+    baseUrl +
+    "?search=" +
+    encodeURIComponent(query) +
+    "&searchby=" +
+    encodeURIComponent(filter);
 
-    lastQuery = query;
-    lastFilter = filter;
+  lastQuery = query;
+  lastFilter = filter;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(resp => {
-        if (!resp || !resp.data) {
-          throw new Error("no data");
-        }
-        lastResults = resp.data;
+  fetch(url)
+    .then(response => response.json())
+    .then(resp => {
+      if (!resp || !resp.data) {
+        throw new Error("no data");
+      }
+      lastResults = resp.data;
 
-        // const data = resp.data.slice(currPage * pageSize, (currPage + 1) * pageSize);
+      // const data = resp.data.slice(currPage * pageSize, (currPage + 1) * pageSize);
 
-        renderResults(resp.data);
-        tableBodyEl.parentElement.parentElement.classList.remove("hidden");
-      })
-      .catch(console.error)
-      .finally(() => {
-        spinnerEl.style.display = "none";
-      });
-  }
+      renderResults(resp.data);
+      tableBodyEl.parentElement.parentElement.classList.remove("hidden");
+    })
+    .catch(console.error)
+    .finally(() => {
+      spinnerEl.style.display = "none";
+    });
 });

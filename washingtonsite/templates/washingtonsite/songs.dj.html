@@ -3,20 +3,17 @@
 <div class="col gap-4 p-4">
     <h1 class="text-4xl font-semibold">find your faves!</h1>
     <form id="searchform" class="row gap-2">
- <h1 class="text-xl">
-    Search by:
- </h1>
-            
-            <select class="rounded" id="searchby">
-                <option>artist</option>
-                <option>title</option>
-            </select>
-            <input class="rounded px-2" id="search" name="search" type="textbox" />
-            <input class="rounded px-2 bg-slate-200 text-black shadow" id="btnSearch" type="submit" value="Go!" />
-            <img id="spinner" src="{% static "washingtonsite/ajaxload.gif" %}" />
-
+        <h1 class="text-xl">
+            Search by:
+        </h1>
+        <select class="rounded" id="searchby">
+            <option>artist</option>
+            <option>title</option>
+        </select>
+        <input class="rounded px-2" id="search" name="search" type="textbox" />
+        <input class="rounded px-2 bg-slate-200 text-black shadow" id="btnSearch" type="submit" value="Go!" />
+        <img id="spinner" src="{% static "washingtonsite/ajaxload.gif" %}" />
     </form>
-
     <div class="hidden">
         <table>
             <tr class="text-white"><th>Artist</th><th>Title</th></tr>
@@ -24,9 +21,6 @@
             </tbody>
         </table>
     </div>
-
-
-
 <h2 class="text-xl font-semibold">
 if u don't find what you are looking 4 please email songs@babyketten.com with requests!
 </h2>
@@ -67,7 +61,7 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
       event.preventDefault();
       const query = searchEl.value;
       const filter = searchbyEl.value;
-      if (query !== "") {
+      if (!query) return;
         spinnerEl.style.display = "block";
         const url =
           baseUrl +
@@ -96,7 +90,6 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
           .finally(() => {
             spinnerEl.style.display = "none";
           });
-      }
     });
 </script>
 {% endblock bottom_scripts %}
