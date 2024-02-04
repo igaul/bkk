@@ -34,11 +34,7 @@ searchFormEl.addEventListener("submit", function (event) {
   if (!query) return;
   spinnerEl.style.display = "block";
   const url =
-    baseUrl +
-    "?search=" +
-    encodeURIComponent(query) +
-    "&searchby=" +
-    encodeURIComponent(filter);
+    baseUrl + "?search=" + encodeURIComponent(query) + "&searchby=" + filter;
 
   lastQuery = query;
   lastFilter = filter;

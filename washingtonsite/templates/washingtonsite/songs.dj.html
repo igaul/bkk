@@ -45,7 +45,7 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
       while (tableBodyEl.firstChild) {
         tableBodyEl.removeChild(tableBodyEl.firstChild);
       }
-      data.forEach(function (item) {
+      data.forEach( item => {
         const tr = document.createElement("tr");
         const artist = document.createElement("td");
         artist.innerText = item.artist;
@@ -62,13 +62,13 @@ if u don't find what you are looking 4 please email songs@babyketten.com with re
       const query = searchEl.value;
       const filter = searchbyEl.value;
       if (!query) return;
-        spinnerEl.style.display = "block";
-        const url =
-          baseUrl +
-          "?search=" +
-          encodeURIComponent(query) +
-          "&searchby=" +
-          encodeURIComponent(filter);
+      spinnerEl.style.display = "block";
+      const url =
+        baseUrl +
+        "?search=" +
+        encodeURIComponent(query) +
+        "&searchby=" +
+        filter;
     
         lastQuery = query;
         lastFilter = filter;
