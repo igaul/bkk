@@ -208,10 +208,10 @@ if USE_WHITENOISE:
 #     STATIC_LOCATION = "static"
 #     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/"
 #     STATICFILES_STORAGE = "project.storage_backends.StaticStorage"
-# else:
-#     STATICFILES_STORAGE = (
-#         "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
-#     )
+else:
+    STATICFILES_STORAGE = (
+        "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+    )
 # Media files
 # TODO: use S3 or nginx container
 MEDIA_ROOT = BASE_DIR / "media"
