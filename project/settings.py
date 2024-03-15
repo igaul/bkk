@@ -193,14 +193,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
-
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
 # TODO: use whitenoise (or s3)
 USE_WHITENOISE = getenv("USE_WHITENOISE", "False") == "True"
-STATIC_ROOT = BASE_DIR / "staticfiles"
 if USE_WHITENOISE:
     print("using whitenoise")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -210,7 +209,6 @@ if USE_WHITENOISE:
 #     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/"
 #     STATICFILES_STORAGE = "project.storage_backends.StaticStorage"
 else:
-    STATIC_URL = "static/"
     STATICFILES_STORAGE = (
         "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
     )
