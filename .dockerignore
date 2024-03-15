@@ -11,3 +11,5 @@ __pycache__/
 .nogit/
 .env
 .env.*
+
+rundev.sh
