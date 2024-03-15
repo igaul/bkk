@@ -1,0 +1,14 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "tw.css" %}">
+    <title>{% block title %}Error{% endblock title %}</title>
+</head>
+<body class="bg-primary-content p-4 size-full">
+    <div class="col p-4 justify-center">
+        <div class="text-center">{% block content %}{% endblock content %}</div>
+    </div>
+</body>
+</html>

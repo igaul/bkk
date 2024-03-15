@@ -18,12 +18,18 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.template.response import TemplateResponse
 from django.urls import include, path
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from website.urls import urlpatterns as website_urls
+
+
+def handler404(request, exception):
+    template = "errors/404.dj.html"
+    return TemplateResponse(request, template, status=404)
 
 urlpatterns = [
     path("hamsters/", admin.site.urls),
