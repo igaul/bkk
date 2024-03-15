@@ -20,7 +20,7 @@ console_command = '/code/manage.py shell'
   APP_LOG_FILE = "/data/app.log"
   #
   # ADD_FLY_HOST = 'true'
-  ALLOWED_HOSTS = 'bkk.igaul.net'
+  ALLOWED_HOSTS = 'bkk.igaul.net,babyketten.com,www.babyketten.com'
 
 [http_service]
   internal_port = 8000
