@@ -40,7 +40,7 @@ searchFormEl.addEventListener("submit", function (event) {
   lastFilter = filter;
 
   fetch(url)
-    .then(response => response.json())
+    .then(r => r.json())
     .then(resp => {
       if (!resp || !resp.data) {
         throw new Error("no data");
