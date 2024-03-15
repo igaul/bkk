@@ -15,6 +15,7 @@ console_command = '/code/manage.py shell'
   ENV_FILE = '0'
   DB_ENGINE="django.db.backends.sqlite3"
   DB_NAME = "/data/db.sqlite3"
+  USE_WHITENOISE = "True"
   # TODO: use this env to set CMD
   # GUNICORN_LOG_FILE = "/data/gunicorn.log"
   APP_LOG_FILE = "/data/app.log"
