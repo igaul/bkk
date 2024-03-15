@@ -16,6 +16,7 @@ RUN set -ex && \
     rm -rf /root/.cache/
 COPY . /code
 # call before building
+# ENV USE_WHITENOISE True
 # RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
