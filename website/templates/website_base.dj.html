@@ -12,7 +12,14 @@
       as="font"
       type="font/woff2"
       crossorigin
-    />  
+    /> 
+    <link
+    rel="preload"
+    href="{% static 'website/fonts/Arimo-Regular.tff' %}"
+    as="font"
+    type="font/tff"
+    crossorigin
+  />   
     <link rel="stylesheet" href="{% static "website/styles.css" %}">    
     {% block extra_head %}{% endblock extra_head %} {% block extra_styles %} {% endblock extra_styles %}
     {% block extra_meta_head %}
