@@ -3,8 +3,12 @@ from logging import getLogger
 from uuid import UUID, uuid4
 
 from django.conf import settings
-from django.http import (HttpRequest, HttpResponseNotFound,
-                         HttpResponseRedirect, JsonResponse)
+from django.http import (
+    HttpRequest,
+    HttpResponseNotFound,
+    HttpResponseRedirect,
+    JsonResponse,
+)
 from django.shortcuts import get_object_or_404
 from django.template.response import TemplateResponse
 from django.urls import reverse
@@ -70,7 +74,7 @@ def song_search(request: HttpRequest) -> TemplateResponse:
             # TODO: paginate resp ???
             data = result.json()
             log.info(f"got {len(data)} results")
-            return JsonResponse({'data':data}, safe=False)
+            return JsonResponse({"data": data}, safe=False)
         else:
             print("ERR", result)
             return JsonResponse({"error": "no results"})
