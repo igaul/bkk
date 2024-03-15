@@ -1,7 +1,23 @@
 @font-face{
     font-family: 'Anton';
+    /* font-weight: 100 200 300 400 500 600 700; */
     src: url('/static/website/fonts/Anton-Regular.woff2') format('woff2') ;
 }
+@font-face {
+    font-family: 'Arimo';
+    font-weight: 400;
+    src: url('/static/website/fonts/Arimo-Regular.tff') format('tff');
+
+}
+/* body {
+    font-family: 'Arimo', Helvetica, Arial, Verdana, sans-serif;
+} */
 .arial {
     font-family: 'Arial', sans-serif;
+}
+.arimo {
+    font-family: 'Arimo', sans-serif;
+}
+.anton {
+    font-family: 'Anton', sans-serif;
 }

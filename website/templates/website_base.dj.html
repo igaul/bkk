@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'tw.css' %}" />
     <link rel="icon" href="{% static "favicon.ico" %}" sizes="32x32" />
-    {#  TODO: meta tags / seo  #}
     <link
       rel="preload"
       {% comment %} href="https://cdn.karanook.com/assets/montserrat_latin.woff2" {% endcomment %}
@@ -18,16 +17,20 @@
     {% block extra_head %}{% endblock extra_head %} {% block extra_styles %} {% endblock extra_styles %}
     {% block extra_meta_head %}
     {# TODO: all meta tags for bkk-or, override base for washington #}
-    <meta name="description" content="Baby Ketten Karaoke: the world's greatest karaoke">
+    <meta property="og:title" content="Home"><meta name="twitter:title" content="Home"><meta property="og:type" content="website"><meta name="twitter:type" content="website"><meta property="og:image" content="{% static "favicon.ico" %}"><meta name="twitter:image" content="{% static "favicon.ico" %}"><meta property="og:url" content="https://www.babyketten.com"><meta name="twitter:url" content="https://www.babyketten.com"><meta property="og:description" content="Baby Ketten Karaoke: the world's greatest karaoke"><meta name="twitter:description" content="Baby Ketten Karaoke: the world's greatest karaoke"><meta name="description" content="Baby Ketten Karaoke: the world's greatest karaoke">
     {% endblock extra_meta_head %}
     <title>{% block page_title %}{% endblock page_title %} Baby Ketten Karaoke</title>
 </head>
 <body bgcolor="#000000" link="#FFFFFF" vlink="#999999" class="twoColLiqLtHdr">
-    <div class="col bg-neutral-400 w-full items-center p-4 py-8">
-        <a href="{% url "website:index" %}"><h1 class="text-6xl uppercase text-center text-black">
+  {% block upperbody %}
+    <div class="col bg-neutral-400 w-full items-center p-4 py-6">
+        <a href="{% url "website:index" %}">
+          <h1 class="text-6xl uppercase text-center text-black">
               Baby Ketten Karaoke
-          </h1></a>  
-      </div>
+          </h1>
+        </a>  
+    </div>
+    {% endblock upperbody %}
     {% comment %} {% include 'common/messages_list.html' %} {% endcomment %}
     <div id="container" class="block-content">{% block content %}{% endblock content %}</div>
 </body>
