@@ -15,9 +15,9 @@ RUN set -ex && \
     pip install -r /tmp/requirements.txt && \
     rm -rf /root/.cache/
 COPY . /code
-# call before building
-# ENV USE_WHITENOISE True
-# RUN python manage.py collectstatic --noinput
+# OR call before building
+ENV USE_WHITENOISE True
+RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
