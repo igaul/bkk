@@ -5,7 +5,7 @@
 @font-face {
     font-family: 'Arimo';
     font-weight: 400;
-    src: url('/static/website/fonts/Arimo-Regular.tff') format('tff');
+    src: url('/static/website/fonts/Arimo-Regular.ttf') format('ttf');
 }
 .arial {
     font-family: 'Arial', sans-serif;
