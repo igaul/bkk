@@ -97,6 +97,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+        "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -198,8 +199,21 @@ STATICFILES_DIRS = [
 ]
 
 # TODO: use whitenoise (or s3)
+USE_WHITENOISE = getenv("USE_WHITENOISE", "False") == "True"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
+if USE_WHITENOISE:
+    print("using whitenoise")
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# elif USE_S3_STATIC:
+#     print("usings s3 static")
+#     STATIC_LOCATION = "static"
+#     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/"
+#     STATICFILES_STORAGE = "project.storage_backends.StaticStorage"
+else:
+    STATIC_URL = "static/"
+    STATICFILES_STORAGE = (
+        "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+    )
 # Media files
 # TODO: use S3 or nginx container
 MEDIA_ROOT = BASE_DIR / "media"
