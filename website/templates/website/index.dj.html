@@ -1,7 +1,6 @@
 {% extends "website_base.dj.html" %} {% load static %}
 {% block extra_meta_head %}
-<meta name="description" content="Baby Ketten Klub: Named America's greatest karaoke. Full service bar with 12 taps, cocktail menu, boozy slushies & a full vegan menu. minors allowed 5pm-9pm. we have public karaoke everyday 9pm-2am & sanitized private karaoke rooms that can be reserved online. rooms include premium sound and the best selection of karaoke songs on the planet. since baby ketten makes their own tracks you will find songs that you have never before seen at karaoke with a focus on below-the-radar punk, indie, metal, alt, folk, hip hop, rap, edm, new wave, etc.. we also have all of the classics of course :)">
-<link rel="canonical" href="https://www.babyketten.com/or" />
+{% include "_partials/meta.dj.html" with title="" image="" url="https://www.babyketten.com/or" description="Baby Ketten Klub: Named America's greatest karaoke. Full service bar with 12 taps, cocktail menu, boozy slushies & a full vegan menu. minors allowed 5pm-9pm. we have public karaoke everyday 9pm-2am & sanitized private karaoke rooms that can be reserved online. rooms include premium sound and the best selection of karaoke songs on the planet. since baby ketten makes their own tracks you will find songs that you have never before seen at karaoke with a focus on below-the-radar punk, indie, metal, alt, folk, hip hop, rap, edm, new wave, etc.. we also have all of the classics of course :)" %}
 {% endblock extra_meta_head %}
 {% comment %} {% block extra_head %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400,400i,700,700i,900,900i|Arimo:400,400i,700,700i,900,900i">
@@ -19,12 +18,15 @@
             <h1>
                 DAILEEPUBLIK KARAOKEE 9PM-2AM
             </h1>
+            <a class="hover:text-black" href="{% url "website:menus" %}#drinks">
             <h1>
                 FULL BARR WITH 12 TAPZ + KOCKTALE MENEW
-            </h1>
-            <h1>
+            </h1>  
+            </a>
+            <a class="hover:text-black" href="{% url "website:menus" %}#food"><h1>
                 FULL VEGANN MENEW
-            </h1>
+            </h1></a>
+     
             <h1>
                 ALL AGEZ ALLOWED TIL 9PM!
             </h1>

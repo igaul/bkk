@@ -2,7 +2,7 @@
 {% block content %}
 <div class="col gap-0">
     <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap">
+        <div id="food" class="row gap-6 flex-wrap">
             <img src="{% static "website/bkk-kitchen-menu.jpg" %}" alt="food menu image" class="w-full max-w-lg">
             <div class="col gap-4 text-white justify-center max-w-lg">
                 <h1 class="text-4xl text-center">
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="col bg-red-600 px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
+        <div id="drinks" class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
             <img src="{% static "website/bkk-drinks-menu.jpg" %}" alt="drinks menu image" class="w-full max-w-lg">
             <div class="col gap-4 text-white justify-center items-center max-w-lg">
                 <h1 class="text-5xl text-center">
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="col bg-neutral-400 px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap justify-center w-full max-w-6xl mx-auto">
+        <div id="cocktails" class="row gap-6 flex-wrap justify-center w-full max-w-6xl mx-auto">
             <img src="{% static "website/bkk-cocktail-menu.jpg" %}" alt="cocktail menu image" class="w-full max-w-lg">
             <div class="col gap-4 text-black justify-center text-center max-w-lg">
                 <h1 class="text-5xl text-center">
