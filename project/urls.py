@@ -31,6 +31,7 @@ def handler404(request, exception):
     template = "errors/404.dj.html"
     return TemplateResponse(request, template, status=404)
 
+
 urlpatterns = [
     path("hamsters/", admin.site.urls),
     path("", include(website_urls)),
