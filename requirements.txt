@@ -5,7 +5,7 @@ apimatic-core-interfaces==0.1.4
 apimatic-requests-client-adapter==0.1.6
 asgiref==3.7.2
 beautifulsoup4==4.11.2
-black==24.1.1
+black==24.3.0
 boto3==1.34.29
 botocore==1.34.29
 Brotli==1.1.0
