@@ -33,7 +33,7 @@
         </div>
         <div class="col items-center max-w-xl mx-auto">
             <picture>
-                <source srcset="{% static 'website/bkk-sign.webp' %}" media="(min-width: 768px)">
+                {% comment %} <source srcset="{% static 'website/bkk-sign.webp' %}" media="(min-width: 768px)"> {% endcomment %}
                 <source srcset="{% static 'website/bkk-sign.jpg' %}" media="(min-width: 768px)">
                 <source srcset="{% static 'website/bkk-sign-sm.webp' %}" media="(max-width:768px)" >
                 <img src="{% static 'website/bkk-sign-sm.jpg' %}" alt="Baby Ketten Karaoke" class="w-full rounded-3xl">
