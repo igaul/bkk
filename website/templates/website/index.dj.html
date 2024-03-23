@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton:400,400i,700,700i,900,900i|Arimo:400,400i,700,700i,900,900i">
 {% endblock extra_head %} {% endcomment %}
 {% block content %}
-<div class="col gap-0">
-    <div class="col bg-red-600 px-3 py-14 gap-8 min-h-[calc(100vh-80px)]">
-        <div class="col px-8 items-center justify-center gap-2 text-white text-xl text-center sm:text-3xl">
+<div class="flex flex-col">
+    <div class="col bg-red-600/90 p-3 gap-8 h-full min-h-[calc(100vh-80px)] xl:max-h-[800px] sm:py-8 sm:min-h-full">
+        <div class="col px-6 items-center justify-evenly gap-2 text-white text-2xl text-center sm:text-3xl">
             <h1>
                 OPEN 7 DAYZ A WEEEK 5PM-2:30AM
             </h1>
@@ -31,7 +31,7 @@
                 ALL AGEZ ALLOWED TIL 9PM!
             </h1>
         </div>
-        <div class="col items-center max-w-xl mx-auto">
+        <div class="max-w-xl mx-auto py-[8vh]">
             <picture>
                 {% comment %} <source srcset="{% static 'website/bkk-sign.webp' %}" media="(min-width: 768px)"> {% endcomment %}
                 <source srcset="{% static 'website/bkk-sign.jpg' %}" media="(min-width: 768px)">
@@ -42,8 +42,8 @@
         </div>
     </div>
     <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="col xl:row gap-6">
-            <img loading="lazy" src="{% static "website/bkk-gift-card.jpg" %}" alt="gift card image" class="w-full max-w-lg rounded-3xl object-contain">
+        <div class="col items-center w-full gap-6 mx-auto xl:row xl:justify-evenly">
+            <img loading="lazy" src="{% static "website/bkk-gift-card.jpg" %}" alt="gift card image" class="w-full max-w-lg rounded-3xl object-contain"/>
             <div class="col gap-4 text-white justify-center max-w-lg">
                 <h1 class="text-5xl">
                     BABY KETTEN KLUB GIFT KARDZ!!!   
@@ -51,7 +51,7 @@
                 <h2 class="arimo text-xl font-normal">
                     lookin 4 tha purrfekt last minit gift? get em a gift kard 2 tha klub!
                 </h2>
-                <a class="arimo p-4 bg-red-600 w-fit text-xl hover:text-black" href="https://squareup.com/gift/7B86QEGE6WAJN/order" target="_blank" >buy heeer</a>
+                <a class="arimo p-4 bg-red-600/90 w-fit text-xl hover:text-black" href="https://squareup.com/gift/7B86QEGE6WAJN/order" target="_blank" >buy heeer</a>
             </div>
         </div>
     </div>
@@ -59,12 +59,12 @@
         <h1 class="text-4xl sm:text-5xl">
             SONG SEARCHH
         </h1>
-        <a target="_blank" href="https://book.babyketten.com/" class="arimo text-xl text-center text-black underline underline-offset-2 visited:text-red-600">
+        <a target="_blank" href="https://book.babyketten.com/" class="arimo text-xl text-center text-black underline underline-offset-2 visited:text-red-600/90">
             CLIK HEEER 2 SERCH 4 YER FAVE SONGZ!
         </a>
     </div>
     <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="col xl:row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
+        <div class="col items-center w-full gap-6 mx-auto xl:row xl:justify-evenly">
             <img loading="lazy" src="{% static "website/bkk-private-rooms.jpg" %}" alt="gift card image" class="w-full max-w-lg rounded-3xl object-contain">
             <div class="col gap-4 text-white justify-center items-center max-w-lg">
                 <h1 class="text-5xl">
@@ -79,7 +79,7 @@
         </div>
     </div>
     <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
+        <div class="col items-center w-full gap-6 mx-auto xl:row xl:justify-evenly">
             <img loading="lazy" src="{% static "website/bkk-kitchen.jpg" %}" alt="gift card image" class="w-full max-w-lg object-contain">
             <div class="col gap-4 text-white items-center max-w-lg">
                 <h1 class="text-3xl sm:text-5xl">
@@ -104,7 +104,6 @@
         </div>
     </div>
     <div class="col bg-black px-3 py-14 gap-8 items-center">
-        <div class="row gap-6 flex-wrap justify-between w-full max-w-6xl mx-auto">
             <img loading="lazy" src="{% static "website/bkk-geeks-who-drink.jpg" %}" alt="gift card image" class="w-full max-w-lg object-contain">
             <div class="col gap-4 text-white items-center justify-center w-full max-w-lg">
                 <h1 class="text-5xl">
@@ -113,11 +112,11 @@
                 <h2 class="arimo text-xl">
                     FREEE 2 PLAY! EVRY TUEZDEY 7-9 WITH PRIZEZ!
                 </h2>
-                <a class="arimo self-start p-3 bg-red-600 w-fit text-2xl hover:text-black" href="https://www.geekswhodrink.com/" target="_blank" >LERN MOAR</a>
+                <a class="arimo self-start p-3 bg-red-600/90 w-fit text-2xl hover:text-black" href="https://www.geekswhodrink.com/" target="_blank" >LERN MOAR</a>
             </div>
         </div>
     </div>
-    <div class="col bg-red-600 px-4 py-14 gap-8 items-center text-white">
+    <div class="col bg-red-600/90 px-4 py-14 gap-8 items-center text-white">
         <h1 class="text-4xl">
             KONTAKT US
         </h1>
