@@ -17,6 +17,7 @@ RUN set -ex && \
 COPY . /code
 # OR call before building
 ENV USE_WHITENOISE True
+# clear first ?
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
